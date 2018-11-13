@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   
+    $("#btn2").click(function(){
+        $("ol").append("<li>Appended item</li>");
+    });
+});
+</script>
+</head>
+<body>
+
+<p>Ingredientes para tu ensalada</p>
+
+<input type="text" id="nombre" placeholder="ingresá tu nombre">
+<button id="btn2">Agregá un ingrediente</button>
+
+
+<ol>
+  <li>Tomate</li>
+  <li>Lechuga</li>
+  <li>Huevo</li>
+</ol>
+
+
+
+</body>
+</html>

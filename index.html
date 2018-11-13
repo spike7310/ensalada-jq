@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jquery</title>
+
+	<style type="text/css">
+		.cuadrado{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border-radius: 50%;
+		}
+
+		.circulo{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border-radius: 50%;
+		}
+
+		.color{
+			background:cyan;
+		}
+	</style>
+</head>
+<body>
+
+	<ul>
+		<li>elemento 1</li>
+		<li>elemento 2</li>
+		<li>elemento 3</li>
+		<li>elemento 4</li>
+	</ul>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<input type="text" id="nombre" placeholder="ingresá tu nombre">
+	<button id="mostrar">Mostrar</button>
+	<h2></h2>
+
+	<button id="agrandar">agrandar</button>
+	<button id="achicar">achicar</button>
+
+
+	<h2>hola </h2>
+	<h1>SOY UN TEXTO</h1>
+	<article>
+		<div class="cuadrado"></div>
+	</article>
+
+	<div class="circulo"></div>
+
+	<button id="cambio">apagar</button>
+
+	<button id="cambio1"></button>
+	<button id="cambio2"></button>
+	<button id="cambio3"></button>
+	<button id="cambio4"></button>
+
+	<input type="text" placeholder="" name="">
+		
+
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).on("ready", function(){
+		color=$("article .cuadrado").css("background-color")
+		$("article .cuadrado").css("background-color","green")
+
+		console.log(color)
+
+		texto=$("h1").html();
+		console.log(texto)
+		$("h1").html("ahora sos otro texto")
+
+		nombre=prompt("ingresa tu nombre")
+		$("h1").html("Hola, "+nombre)
+
+		$("article .cuadrado").on("click", function(){
+			nombre=prompt("ingresa tu nombre")
+			$("h1").html("Hola, "+nombre)
+		})
+
+		estado="día"
+
+		$("#cambio").on("click", function(){
+			if(estado=="día"){
+				$("body").css("background-color", "black");
+				$("#cambio").html("volver a prender")
+				estado="noche"
+			}else{
+				$("body").css("background-color", "white");
+				$("#cambio").html("apagar")
+				estado="día"
+			}
+
+			console.log(estado)
+		
+		$("#cambio2").on("click", function(){
+			$(".circulo").addClass("color");
+		})
+
+		$(document).on("ready", function(){
+
+			$("p").css("font-size","+=2px")
+		})
+
+		$("#achicar").on("click", function(){
+			$("p").css("font-size", "-=2px")
+		})
+
+		$("ul li").on("click", function(){
+			$(this).toggleClass("destacado")
+	})
+
+		$("ul li:")
+})
+
+
+
+</script>
+</body>
+</html>
